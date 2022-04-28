@@ -32,4 +32,9 @@ public class StudentController {
         LocalDate localDateDOB = LocalDate.of(year, month, day);
         studentService.addNewStudent(new Student(name, localDateDOB, email));
     }
+
+    @DeleteMapping(path = "{studentId}")
+    public void deleteStudent(@PathVariable("studentId") Long studentId) {
+        studentService.deleteStudent(studentId);
+    }
 }
